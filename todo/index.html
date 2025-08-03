@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicholas Magri - ToDo App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="app-header">
+            <h1>📝 ToDo Application</h1>
+            <p>Stay organized and boost your productivity</p>
+        </div>
+
+        <div class="app-content">
+            <!-- Todo Form -->
+            <form class="todo-form" id="todoForm">
+                <h3>➕ Add New Task</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input 
+                            type="text" 
+                            id="todoTitle" 
+                            placeholder="What needs to be done?" 
+                            required
+                        >
+                    </div>
+                    <div class="form-group">
+                        <select id="todoCategory" required>
+                            <option value="">Choose Category</option>
+                            <option value="work">💼 Work</option>
+                            <option value="personal">🏠 Personal</option>
+                            <option value="study">📚 Study</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="btn-add">Add Task</button>
+            </form>
+
+            <!-- Controls Section -->
+            <div class="controls-section">
+                <div class="search-container">
+                    <h4>🔍 Search Tasks</h4>
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        id="searchInput" 
+                        placeholder="Search your tasks..."
+                    >
+                </div>
+                
+                <div class="filter-container">
+                    <h4>🎛️ Filter & Sort</h4>
+                    <div class="filter-controls">
+                        <select id="filterSelect" class="filter-select">
+                            <option value="All">All Categories</option>
+                            <option value="Work">💼 Work</option>
+                            <option value="Personal">🏠 Personal</option>
+                            <option value="Study">📚 Study</option>
+                        </select>
+                        <div class="sort-buttons">
+                            <button class="sort-btn active" id="sortAsc">A → Z</button>
+                            <button class="sort-btn" id="sortDesc">Z → A</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalTodos">0</div>
+                    <div class="stat-label">Total Tasks</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="completedTodos">0</div>
+                    <div class="stat-label">Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="pendingTodos">0</div>
+                    <div class="stat-label">Pending</div>
+                </div>
+            </div>
+
+            <!-- Todo List -->
+            <div class="todo-list">
+                <h3>📋 Your Tasks</h3>
+                <div id="todoContainer">
+                    <!-- Todos will be rendered here -->
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
